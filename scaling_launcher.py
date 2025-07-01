@@ -20,6 +20,7 @@ from typing import Optional
 from scaling_config import ScalingConfigManager
 from scalable_extractor import ScalableExtractor
 from realtime_monitor import RealTimeMonitor
+from targeted_extractor import TargetedExtractor
 
 
 class ScalingLauncher:
@@ -45,11 +46,12 @@ class ScalingLauncher:
         """Print main menu options"""
         print("\n📋 SCALING OPERATIONS:")
         print("1. 📊 Large-Scale Data Extraction")
-        print("2. 🔴 Real-Time Monitoring")
-        print("3. ⚙️  Configuration Management")
-        print("4. 📈 Performance Analysis")
-        print("5. 🔧 System Diagnostics")
-        print("6. 📚 Help & Documentation")
+        print("2. 🎯 Targeted Chat Extraction")
+        print("3. 🔴 Real-Time Monitoring")
+        print("4. ⚙️  Configuration Management")
+        print("5. 📈 Performance Analysis")
+        print("6. 🔧 System Diagnostics")
+        print("7. 📚 Help & Documentation")
         print("0. 🚪 Exit")
     
     async def run_scalable_extraction(self, args):
@@ -105,6 +107,47 @@ class ScalingLauncher:
             print(f"📁 Results saved to: {os.path.abspath(extractor.output_dir)}")
         else:
             print("\n❌ Large-scale extraction failed")
+        
+        return success
+    
+    async def run_targeted_extraction(self, args):
+        """Run targeted extraction on high-value chats"""
+        print("\n🎯 TARGETED CHAT EXTRACTION")
+        print("=" * 50)
+        
+        # Configuration
+        max_targets = args.max_targets or 10
+        max_messages = args.max_messages or 1000
+        max_discovery = args.max_discovery or 100
+        
+        print(f"Configuration:")
+        print(f"  Max Discovery Chats: {max_discovery}")
+        print(f"  Max Target Chats: {max_targets}")
+        print(f"  Max Messages/Chat: {max_messages}")
+        print(f"  Focus: High-value community and business chats")
+        
+        # Confirm before proceeding
+        if not args.yes:
+            response = input("\nStart targeted extraction? (y/N): ")
+            if response.lower() != 'y':
+                print("❌ Targeted extraction cancelled")
+                return False
+        
+        # Run targeted extraction
+        extractor = TargetedExtractor()
+        
+        success = await extractor.run_targeted_extraction(
+            target_chat_names=args.target_chats,
+            max_discovery_chats=max_discovery,
+            max_target_chats=max_targets,
+            max_messages_per_chat=max_messages
+        )
+        
+        if success:
+            print("\n✅ Targeted extraction completed successfully!")
+            print(f"📁 Results saved to: {os.path.abspath(extractor.output_dir)}")
+        else:
+            print("\n❌ Targeted extraction failed")
         
         return success
     
@@ -445,6 +488,14 @@ async def main():
     extract_parser.add_argument('--max-messages', type=int, help='Maximum messages per chat')
     extract_parser.add_argument('--yes', action='store_true', help='Skip confirmation prompts')
     
+    # Targeted command
+    targeted_parser = subparsers.add_parser('targeted', help='Targeted high-value chat extraction')
+    targeted_parser.add_argument('--target-chats', nargs='+', help='Specific chat names to target')
+    targeted_parser.add_argument('--max-discovery', type=int, help='Maximum chats to scan for discovery')
+    targeted_parser.add_argument('--max-targets', type=int, help='Maximum high-value chats to extract')
+    targeted_parser.add_argument('--max-messages', type=int, help='Maximum messages per targeted chat')
+    targeted_parser.add_argument('--yes', action='store_true', help='Skip confirmation prompts')
+    
     # Monitor command
     monitor_parser = subparsers.add_parser('monitor', help='Real-time monitoring')
     monitor_parser.add_argument('--duration', type=int, help='Monitoring duration in minutes')
@@ -477,6 +528,9 @@ async def main():
     try:
         if args.command == 'extract':
             return 0 if await launcher.run_scalable_extraction(args) else 1
+        
+        elif args.command == 'targeted':
+            return 0 if await launcher.run_targeted_extraction(args) else 1
         
         elif args.command == 'monitor':
             return 0 if await launcher.run_realtime_monitoring(args) else 1
