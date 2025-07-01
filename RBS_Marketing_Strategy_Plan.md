@@ -229,25 +229,6 @@ Engagement: Auto-respond (80%) → Human escalation (20%)
 ## Manual Input Requirements by Founder
 
 ### Joseph's Marketing Responsibilities
-**Month 1-3 (6 hours/week)**
-- Technical content review and validation
-- Platform demo creation and updates
-- Integration testing for marketing tools
-- Performance analytics interpretation
-
-**Month 4-6 (4 hours/week)**
-- Thought leadership content review
-- Technical partnership discussions
-- Platform optimization based on feedback
-- Advanced feature demonstrations
-
-**Month 7-12 (3 hours/week)**
-- High-level technical consultations
-- Enterprise client technical discussions
-- Platform scaling and optimization
-- Innovation and R&D planning
-
-### Elie's Marketing Responsibilities
 **Month 1-3 (8 hours/week)**
 - Community relationship building
 - Cultural content validation
@@ -265,6 +246,25 @@ Engagement: Auto-respond (80%) → Human escalation (20%)
 - Executive coaching delivery
 - Strategic advisory meetings
 - International expansion planning
+
+### Elie's Marketing Responsibilities
+**Month 1-3 (6 hours/week)**
+- Technical content review and validation
+- Platform demo creation and updates
+- Integration testing for marketing tools
+- Performance analytics interpretation
+
+**Month 4-6 (4 hours/week)**
+- Thought leadership content review
+- Technical partnership discussions
+- Platform optimization based on feedback
+- Advanced feature demonstrations
+
+**Month 7-12 (3 hours/week)**
+- High-level technical consultations
+- Enterprise client technical discussions
+- Platform scaling and optimization
+- Innovation and R&D planning
 
 ---
 

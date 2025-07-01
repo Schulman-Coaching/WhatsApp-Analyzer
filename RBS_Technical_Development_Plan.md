@@ -1,5 +1,5 @@
 # RBS Real Estate Platform - Technical Development Plan
-## AI-First Architecture for Joseph & Elie
+## AI-First Architecture for Elie & Joseph
 
 ### Executive Summary
 This technical plan leverages AI and automation tools to minimize manual development work while building a sophisticated real estate platform. The approach prioritizes no-code/low-code solutions with AI assistance for rapid deployment and scaling.
@@ -179,7 +179,7 @@ const propertyRecommendation = async (tenantProfile) => {
 
 ## Manual Input Requirements Summary
 
-### Joseph's Responsibilities (Technical Lead)
+### Elie's Responsibilities (Technical Lead)
 **Week 1-4 (8 hours total)**
 - Platform setup and configuration
 - AI tool integration testing
@@ -198,7 +198,7 @@ const propertyRecommendation = async (tenantProfile) => {
 - Training material creation
 - Go-live coordination
 
-### Elie's Responsibilities (Business Lead)
+### Joseph's Responsibilities (Business Lead)
 **Week 1-4 (6 hours total)**
 - Business requirement validation
 - User experience review
@@ -270,4 +270,4 @@ const propertyRecommendation = async (tenantProfile) => {
 
 ### **Total Technical Budget**: $1,670-4,000/month
 
-This technical plan ensures Joseph and Elie can build a sophisticated real estate platform with minimal manual work, leveraging AI and automation for 85-95% of development tasks while maintaining high quality and rapid deployment.
+This technical plan ensures Elie and Joseph can build a sophisticated real estate platform with minimal manual work, leveraging AI and automation for 85-95% of development tasks while maintaining high quality and rapid deployment.
