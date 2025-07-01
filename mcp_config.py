@@ -245,7 +245,7 @@ class MCPConfig:
                     "name": "github.com/lharries/whatsapp-mcp",
                     "endpoint": "http://localhost:3000",
                     "connection_type": "sse",
-                    "auth_token": null,
+                    "auth_token": None,
                     "timeout": 60,
                     "max_retries": 5,
                     "retry_delay": 2.0,
@@ -264,7 +264,7 @@ class MCPConfig:
                     "cooldown_period": 300
                 },
                 "auto_authenticate": False,
-                "phone_number": null,
+                "phone_number": None,
                 "session_persistence": True,
                 "export_format": "json",
                 "include_media": False
