@@ -1,0 +1,29 @@
+# Core MCP Client Dependencies
+aiohttp>=3.8.0
+websockets>=11.0.0
+asyncio-mqtt>=0.11.0
+
+# JSON-RPC and Protocol Support
+jsonrpc-base>=2.1.0
+jsonrpc-async>=2.1.0
+
+# Async and Concurrency
+asyncio>=3.4.3
+
+# Logging and Utilities
+python-dateutil>=2.8.0
+
+# Optional: For enhanced error handling and retries
+tenacity>=8.0.0
+
+# Optional: For configuration management
+pydantic>=1.10.0
+
+# Optional: For better async debugging
+aiofiles>=0.8.0
+
+# Development and Testing (optional)
+pytest>=7.0.0
+pytest-asyncio>=0.20.0
+black>=22.0.0
+flake8>=5.0.0
