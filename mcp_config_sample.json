@@ -1,0 +1,31 @@
+{
+  "whatsapp": {
+    "server": {
+      "name": "github.com/lharries/whatsapp-mcp",
+      "endpoint": "http://localhost:3000",
+      "connection_type": "sse",
+      "auth_token": null,
+      "timeout": 60,
+      "max_retries": 5,
+      "retry_delay": 2.0,
+      "health_check_interval": 30,
+      "session_timeout": 7200,
+      "custom_headers": {
+        "User-Agent": "WhatsApp-MCP-Client/1.0",
+        "Accept": "application/json"
+      }
+    },
+    "rate_limits": {
+      "messages_per_minute": 60,
+      "chats_per_minute": 30,
+      "requests_per_second": 2,
+      "burst_limit": 10,
+      "cooldown_period": 300
+    },
+    "auto_authenticate": false,
+    "phone_number": null,
+    "session_persistence": true,
+    "export_format": "json",
+    "include_media": false
+  }
+}
